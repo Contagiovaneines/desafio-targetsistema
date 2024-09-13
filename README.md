@@ -4,24 +4,60 @@ Este documento contém as soluções para uma série de problemas básicos, incl
 
 ## 1) Verificar se um número pertence à sequência de Fibonacci
 
-Você pode usar um código em JavaScript para verificar se um número informado pertence à sequência de Fibonacci. O código vai calcular a sequência até encontrar o número ou ultrapassá-lo e, então, retornar se o número está presente na sequência ou não.
+Codigo completo nos arquivos
+```
+<script>
+        function isFibonacci(num) {
+            if (num < 0) return false;
+            let a = 0, b = 1;
+            while (a < num) {
+                [a, b] = [b, a + b];
+            }
+            return a === num;
+        }
 
+        function verificarFibonacci() {
+            const numero = document.getElementById('numero').value;
+            const resultado = document.getElementById('resultado');
+            
+            if (isFibonacci(Number(numero))) {
+                resultado.textContent = `O número ${numero} pertence à sequência de Fibonacci.`;
+            } else {
+                resultado.textContent = `O número ${numero} não pertence à sequência de Fibonacci.`;
+            }
+        }
+    </script>
+```
 ## 2) Verificar a existência e a quantidade da letra 'a' em uma string
+Codigo completo nos arquivos
+```
+<script>
+        function contarLetraA(texto) {
+            return (texto.match(/a/gi) || []).length;
+        }
 
-Para verificar a quantidade de vezes que a letra 'a' (maiúscula ou minúscula) aparece em uma string, você pode usar um código em JavaScript que conte as ocorrências dessa letra na string fornecida.
+        function contarLetrasA() {
+            const texto = document.getElementById('texto').value;
+            const resultado = document.getElementById('resultado');
+            
+            const quantidadeA = contarLetraA(texto);
+            resultado.textContent = `A letra 'a' aparece ${quantidadeA} vez(es) na string.`;
+        }
+    </script>
+```
 
 ## 3) Valor da variável SOMA após a execução do código
 
 Dado o código abaixo:
 
-```cpp
+```
 int INDICE = 12, SOMA = 0, K = 1;
 while (K < INDICE) {
     K = K + 1;
     SOMA = SOMA + K;
 }
 print(SOMA);
-
+```
 
 O valor final da variável `SOMA` após a execução do código é **66**.
 
