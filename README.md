@@ -59,7 +59,7 @@ while (K < INDICE) {
 print(SOMA);
 ```
 
-O valor final da variável `SOMA` após a execução do código é **66**.
+O valor final da variável `SOMA` após a execução do código é **77**.
 
 ## 4) Completar os próximos elementos das sequências
 
