@@ -1,4 +1,3 @@
-```
 # Soluções de Problemas
 
 Este documento contém as soluções para uma série de problemas básicos, incluindo verificações de Fibonacci, contagem de letras em uma string, e questões matemáticas e lógicas.
@@ -22,7 +21,7 @@ while (K < INDICE) {
     SOMA = SOMA + K;
 }
 print(SOMA);
-```
+
 
 O valor final da variável `SOMA` após a execução do código é **66**.
 
