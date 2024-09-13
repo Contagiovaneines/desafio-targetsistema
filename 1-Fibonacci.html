@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Verificador de Fibonacci</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+        .container {
+            text-align: center;
+        }
+        input {
+            margin: 10px;
+            padding: 10px;
+            font-size: 16px;
+        }
+        button {
+            padding: 10px 20px;
+            font-size: 16px;
+            cursor: pointer;
+        }
+        .result {
+            margin-top: 20px;
+            font-size: 18px;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Verificador de Fibonacci</h1>
+        <input type="number" id="numero" placeholder="Informe um número" />
+        <button onclick="verificarFibonacci()">Verificar</button>
+        <div id="resultado" class="result"></div>
+    </div>
+    <script>
+        function isFibonacci(num) {
+            if (num < 0) return false;
+            let a = 0, b = 1;
+            while (a < num) {
+                [a, b] = [b, a + b];
+            }
+            return a === num;
+        }
+
+        function verificarFibonacci() {
+            const numero = document.getElementById('numero').value;
+            const resultado = document.getElementById('resultado');
+            
+            if (isFibonacci(Number(numero))) {
+                resultado.textContent = `O número ${numero} pertence à sequência de Fibonacci.`;
+            } else {
+                resultado.textContent = `O número ${numero} não pertence à sequência de Fibonacci.`;
+            }
+        }
+    </script>
+</body>
+</html>
